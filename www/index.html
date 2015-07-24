@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="lib/jqm/css/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="lib/bxslider/jquery.bxslider.css" />
+		
+        <title>Title</title>
+        
+        <script type="text/javascript" src="lib/jq/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="lib/jqm/js/jquery.mobile-1.4.5.min.js"></script>		
+        <script type="text/javascript" src="lib/bxslider/jquery.bxslider.min.js"></script>
+        
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+                
+    </head>
+    <body>
+        
+        <div data-role="page" id="login">
+        
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <h3>MacLean's Cafe</h3>   
+                <div id="header2">
+                    <h2>Please login to continue</h2>
+                </div>
+            </div>
+            
+            <div class="ui-content">
+
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <div style="text-align: center">
+                        
+                        <form id="frmLogin">
+                            <input type="text" placeholder="Username" id="txtUsername" required autofocus>
+                            <input type="password" placeholder="Password" id="txtPassword" required>
+                            
+                            <fieldset class="ui-grid-a" > <!-- data-role="controlgroup"  data-type="horizontal"-->
+                                <div class="ui-block-a"><input data-icon="check" type="submit" class="ui-btn ui-btn-b" value="Submit" ></div>
+                                <div class="ui-block-b"><input data-icon="delete" type="reset" class="ui-btn ui-btn-b" value="Reset" ></div>
+                            </fieldset> 
+            
+                        </form>
+                        
+                    </div>
+                    
+                    <div style="font-size: 12px; text-align: center;">
+                        <strong>not registered?</strong> continue as Guest<br/>
+                        username: guest/ password: guest                        
+                    </div>
+                    
+                </div>
+                                
+            </div>  
+            
+            <ul class="bxslider">
+                <li><img class="slide" src="img/banner_img/1.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/2.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/3.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/4.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/1.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/2.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/3.jpg"/></li>
+                <li><img class="slide" src="img/banner_img/4.jpg"/></li>
+            </ul>
+            
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h5><i>the taste of Sri Lanka...</i></h5>
+            </div>
+        
+        </div>
+
+        <div data-role="page" id="home">
+        
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <h3>MacLean's Cafe</h3>
+                <a href="#menu" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Menu</a>
+                <a href="#cart" class="ui-btn ui-icon-shop ui-btn-icon-notext ui-corner-all" data-transition="slide">Order</a>
+                <div id="header2">
+                    <h2><label id="welcomeName"></label></h2>
+                </div>
+            </div>
+
+            <div style="background-image: url('img/food/biriyani.jpg'); height: 200px; width: 100%;">                
+            </div>
+            
+            <div class="ui-content">
+            
+                <div data-role="controlgroup">
+                    <a class="ui-btn ui-btn-b" href="#">About us</a>
+                    <a class="ui-btn ui-btn-b" href="#order">Place Order</a>
+                    <a class="ui-btn ui-btn-b" href="#mylocation">Find us</a>
+                </div>
+                
+            </div> <!-- end of content section -->
+            
+            <div data-role="panel" id="menu" data-position="left" data-display="push" data-theme="b">
+                <h1 class="ui-title">Menu</h1>
+                <ul data-role="listview">
+                    <li data-icon="delete" data-rel="close"><a href="#">Close menu</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><input type="button" id="btnMenuExit" value="Exit" /></li>
+                </ul>
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h3>(c) copyrights 2015</h3>
+            </div>
+        
+        </div>
+        
+        <div data-role="page" id="order">
+        
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <h3>MacLean's Cafe</h3>
+                <a href="#menu" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Menu</a>
+                <a href="#cart" class="ui-btn ui-icon-shop ui-btn-icon-notext ui-corner-all" data-transition="slide">Order</a>
+                <div id="header2">
+                    <h2>choose your favourites...</h2>
+                </div>
+            </div>
+            
+            <div data-role="none">
+                            
+                <ul id="foodItems" data-role="listview">
+                </ul>
+                
+            </div> <!-- end of content section -->
+            
+            <div data-role="panel" id="menu" data-position="left" data-display="push" data-theme="b">
+                <h1 class="ui-title">Menu</h1>
+                <ul data-role="listview">
+                    <li data-icon="delete" data-rel="close"><a href="#">Close menu</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><input type="button" id="btnMenuExit" value="Exit" /></li>
+                </ul>
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h3>(c) copyrights 2015</h3>
+            </div>
+        
+        </div>
+        
+        
+        <div data-role="page" id="cart">
+            
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <h3>MacLean's Cafe</h3>
+                
+                <a href="#cart" id="btnClearCart" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-right" data-transition="slide">Order</a> 
+                
+                <div id="header2">
+                    <h2>Displaying your order...</h2>
+                </div>
+            </div>
+            
+            <div data-role="none">
+                
+                <ul id="cartItems" data-role="listview">
+                </ul>
+                
+                <!--                
+                <div id="cartItems">
+                </div>
+                -->
+                
+                <div id="checkoutBox" role="main" class="ui-content">
+                    <div id="itemCount" style="padding: 10px">
+                    </div>
+                    <a href="#purchase" class="ui-btn ui-btn-b ui-corner-all ui-btn-icon-right ui-icon-check" data-rel="popup" data-position-to="window" data-transition="pop">Complete Order</a>
+                </div>    
+                
+                <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+                    <h3>Place order?</h3>
+                    <p>Your order will be recorded after the payment.</p>
+                    <a id="payOrder" href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Pay: <span id="totalPay">0.00 Rs.</span></a>
+                    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+                </div>                
+                
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h1>Sub Total : <span id="totalAmount"></span></h1>
+            </div>            
+        
+        </div>
+        
+        </div>
+        
+        <div data-dom-cache="false" data-role="page" id="mylocation">
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <h3>MacLean's Cafe</h3>
+                <a href="#menu" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Menu</a>
+                <div id="header2">
+                    <h2>Find us</h2>
+                </div>
+            </div>
+
+            <div id="map" style="width:100%; height:250px;">
+            </div>
+            
+            <div role="main" class="ui-content">
+                
+                <div class="ui-body ui-corner-all custom-corners">                    
+                        <div class="ui-bar ui-bar-b">
+                            <h6>Address</h6>
+                        </div>
+                        <p>No 15, 42nd Lane,<br/> Colombo 06.</p>
+                        <div class="ui-bar ui-bar-b">
+                            <h6>Telephone</h6>
+                        </div>
+                        <p><a href="tel:0112334455">0112334455</a></p>
+                </div>
+                
+            </div>
+
+            <div data-role="panel" id="menu" data-position="left" data-display="push" data-theme="b">
+                <h1 class="ui-title">Menu</h1>
+                <ul data-role="listview">
+                    <li data-icon="delete" data-rel="close"><a href="#">Close menu</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><input type="button" id="btnMenuExit" value="Exit" /></li>
+                </ul>
+            </div>
+            
+            
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <h4>Google Maps</h4>
+            </div>
+        </div>
+        
+        <div data-dom-cache="false" data-role="page" id="about">
+            <div data-role="header" data-theme="b">
+                <a data-role="button" data-rel="back" href="#mylocation" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left">Back</a>
+                <h1>About</h1>
+            </div>
+            <div data-role="content" id="aboutContent">
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <h4>Created with NetBeans IDE</h4>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
